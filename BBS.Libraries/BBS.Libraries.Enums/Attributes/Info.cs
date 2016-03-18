@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,28 +26,29 @@ namespace BBS.Libraries.Enums.Attributes
 
         public static string GetAbbreviation(Enum value)
         {
-            FieldInfo fi = value.GetType().GetField(value.ToString());
-            var attributes = (Info[]) fi.GetCustomAttributes(typeof (Info), false);
-            if (attributes != null && attributes.Length > 0)
-                return attributes[0].Abbreviation;
+            var attribute = Helpers.GetAttributes<Info>(value).FirstOrDefault();
+
+            if (attribute != null)
+                return attribute.Abbreviation;
             return value.ToString();
         }
 
         public static string GetCode(Enum value)
         {
-            FieldInfo fi = value.GetType().GetField(value.ToString());
-            var attributes = (Info[]) fi.GetCustomAttributes(typeof (Info), false);
-            if (attributes != null && attributes.Length > 0)
-                return attributes[0].Code;
+            var attribute = Helpers.GetAttributes<Info>(value).FirstOrDefault();
+
+            if (attribute != null)
+                return attribute.Code;
             return value.ToString();
         }
 
         public static string GetValue(Enum value)
         {
-            var fi = value.GetType().GetField(value.ToString());
-            var attributes = (Info[]) fi.GetCustomAttributes(typeof (Info), false);
-            if (attributes != null && attributes.Length > 0 && attributes.Any(attrb => !string.IsNullOrEmpty(attrb.Value)))
-                return attributes[0].Value;
+            var attribute = Helpers.GetAttributes<Info>(value).FirstOrDefault();
+
+            if (attribute != null && !string.IsNullOrEmpty(attribute.Value))
+                return attribute.Value;
+
             return value.ToString();
         }
 
@@ -57,21 +59,23 @@ namespace BBS.Libraries.Enums.Attributes
 
         public static string GetName(Enum value)
         {
-            FieldInfo fi = value.GetType().GetField(value.ToString());
-            var attributes = (Info[]) fi.GetCustomAttributes(typeof (Info), false);
-            if (attributes != null && attributes.Length > 0)
-                return attributes[0].Name;
+            var attribute = Helpers.GetAttributes<Info>(value).FirstOrDefault();
+
+            if (attribute != null)
+                return attribute.Name;
             return value.ToString();
         }
 
         public static bool IsActive(Enum value)
         {
-            FieldInfo fi = value.GetType().GetField(value.ToString());
-            var attributes = (Info[]) fi.GetCustomAttributes(typeof (Info), false);
-            if (attributes != null && attributes.Length > 0)
-                return attributes[0].Active;
+            var attribute = Helpers.GetAttributes<Info>(value).FirstOrDefault();
+
+            if (attribute != null)
+                return attribute.Active;
             return false;
         }
+
+        
 
         public static bool IsInCategory(Enum value, string category)
         {
@@ -84,8 +88,8 @@ namespace BBS.Libraries.Enums.Attributes
 
         public static List<string> GetCategories(Enum value)
         {
-            FieldInfo fi = value.GetType().GetField(value.ToString());
-            var attributes = (Info[]) fi.GetCustomAttributes(typeof (Info), false);
+            var attributes = Helpers.GetAttributes<Info>(value);
+
             var categories = new List<string>();
             if (attributes != null && attributes.Length > 0 && attributes.Any(x => x.Categories != null))
             {

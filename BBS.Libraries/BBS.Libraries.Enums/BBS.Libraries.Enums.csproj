@@ -42,10 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\Description.cs" />
+    <Compile Include="Attributes\Helpers.cs" />
     <Compile Include="Attributes\Info.cs" />
     <Compile Include="OfType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ToList.cs" />
     <Compile Include="ValidateEnum.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

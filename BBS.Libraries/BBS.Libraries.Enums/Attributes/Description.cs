@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Linq;
 using System.Reflection;
 
 namespace BBS.Libraries.Enums.Attributes
@@ -13,10 +14,9 @@ namespace BBS.Libraries.Enums.Attributes
 
         public static string GetDescription(Enum value)
         {
-            FieldInfo fi = value.GetType().GetField(value.ToString());
-            var attributes = (DescriptionAttribute[]) fi.GetCustomAttributes(typeof (DescriptionAttribute), false);
-            if (attributes != null && attributes.Length > 0)
-                return attributes[0].Description;
+            var attribute = Helpers.GetAttributes<Description>(value).FirstOrDefault();
+            if (attribute != null)
+                return attribute.Description;
             return value.ToString();
         }
     }
