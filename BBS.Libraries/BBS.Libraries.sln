@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBS.Libraries.Enums", "BBS.Libraries.Enums\BBS.Libraries.Enums.csproj", "{F9CCC56C-A0CF-4568-A51B-7BFDC8DEBA65}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{8BC8F139-BBEC-432B-82CC-CE42039E8362}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBS.Libraries.UnitTests.General", "UnitTests\BBS.Libraries.UnitTests.General\BBS.Libraries.UnitTests.General.csproj", "{923A0B55-C4C3-4429-8070-63BA3EF5974D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9CCC56C-A0CF-4568-A51B-7BFDC8DEBA65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9CCC56C-A0CF-4568-A51B-7BFDC8DEBA65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9CCC56C-A0CF-4568-A51B-7BFDC8DEBA65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9CCC56C-A0CF-4568-A51B-7BFDC8DEBA65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{923A0B55-C4C3-4429-8070-63BA3EF5974D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{923A0B55-C4C3-4429-8070-63BA3EF5974D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{923A0B55-C4C3-4429-8070-63BA3EF5974D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{923A0B55-C4C3-4429-8070-63BA3EF5974D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{923A0B55-C4C3-4429-8070-63BA3EF5974D} = {8BC8F139-BBEC-432B-82CC-CE42039E8362}
+	EndGlobalSection
+EndGlobal
