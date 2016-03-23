@@ -8,7 +8,7 @@ namespace BBS.Libraries.UnitTests.General
             brenton,
             [BBS.Libraries.Enums.Attributes.Info(Categories = new string[] { "Developer" }, Active = false)]
             edward,
-            [BBS.Libraries.Enums.Attributes.Info(Active = false, Value = "The Best")]
+            [BBS.Libraries.Enums.Attributes.Info(Active = false, Value = "The Best", Name = "Jay")]
             jason,
             [BBS.Libraries.Enums.Attributes.Info(Active = true)]
             jesse
@@ -19,7 +19,7 @@ namespace BBS.Libraries.UnitTests.General
         {
             [BBS.Libraries.Enums.Attributes.Info(Abbreviation = "NYC")]
             NewYorkCity = 0,
-            [BBS.Libraries.Enums.Attributes.Info(Abbreviation = "CHC")]
+            [BBS.Libraries.Enums.Attributes.Info(Abbreviation = "CHC", Code = "CHIC")]
             Chicago,
             [BBS.Libraries.Enums.Attributes.Info(Abbreviation = "TUP")]
             Tupelo,
@@ -31,6 +31,30 @@ namespace BBS.Libraries.UnitTests.General
             LosAngelas,
             [BBS.Libraries.Enums.Attributes.Info(Abbreviation = "DEN")]
             Denver
+        }
+
+        public enum Things
+        {
+            [BBS.Libraries.Enums.Attributes.Description("Thing One")]
+            [BBS.Libraries.Enums.Attributes.Info(Active = true)]
+            ThingOne,
+            [BBS.Libraries.Enums.Attributes.Description("Thing Two")]
+            [BBS.Libraries.Enums.Attributes.Info(Active = true)]
+            ThingTwo,
+            [BBS.Libraries.Enums.Attributes.Info(Active = true)]
+            ThingRed,
+            [BBS.Libraries.Enums.Attributes.Info(Active = true)]
+            ThingBlue,
+            [BBS.Libraries.Enums.Attributes.Info(Active = false)]
+            ThingGreen
+        }
+
+        public enum ThingsThatHaveNoMetadata
+        {
+            ThingOne,
+            ThingTwo,
+            ThingThree,
+            ThingFour
         }
     }
 }

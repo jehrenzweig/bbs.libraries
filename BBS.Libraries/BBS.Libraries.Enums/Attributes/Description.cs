@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace BBS.Libraries.Enums.Attributes
 {
-    [System.AttributeUsage(System.AttributeTargets.Enum, AllowMultiple = false)]
+    [System.AttributeUsage(System.AttributeTargets.All, AllowMultiple = false)]
     public class Description : System.ComponentModel.DescriptionAttribute
     {
         public Description(string value) : base(value)
