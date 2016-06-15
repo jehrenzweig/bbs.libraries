@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BBS.Libraries.Contracts;
 
 namespace BBS.Libraries.Logging
 {
@@ -10,7 +11,7 @@ namespace BBS.Libraries.Logging
     {
         private readonly StringBuilder _logBuilder;
 
-        private BBS.Libraries.Contracts.ILog ILog;
+        private BBS.Libraries.Contracts.ILog Logger;
 
         public string Log => _logBuilder.ToString();
 
@@ -19,20 +20,26 @@ namespace BBS.Libraries.Logging
             return Log;
         }
 
+        public StatusTracker(ILog logger) : this()
+        {
+            Logger = logger;
+        }
+
         public StatusTracker()
         {
-            // If bbs.libraries.logging.type == log4net, create new log4net, else add default amiright?  actually, think factory
-
-            ILog = new SystemTraceLogging();
-
             _logBuilder = new StringBuilder();
+
+            if (Logger == null)
+            {
+                Logger = new SystemTraceLogging();
+            }
         }
 
         public void AddToLog(string value)
         {
             var logString = $"{DateTime.Now:MM/dd/yyyy hh:mm:ss:fff} - {value} \n";
 
-            ILog.Info(logString);
+            Logger.Info(logString);
 
             _logBuilder.Append(logString);
         }
@@ -41,7 +48,7 @@ namespace BBS.Libraries.Logging
         {
             var logString = $"EXCEPTION: {DateTime.Now:MM/dd/yyyy hh:mm:ss:fff} - {exception.Message} \n\t{exception.StackTrace}";
 
-            ILog.Error(logString);
+            Logger.Error(logString);
 
             _logBuilder.Append(logString);
         }

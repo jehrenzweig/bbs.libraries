@@ -13,9 +13,29 @@ namespace BBS.Libraries.Logging
             System.Diagnostics.Trace.WriteLine(value);
         }
 
+        public void Info(object value)
+        {
+            Info(value.ToString());
+        }
+
+        public void Info(object message, Dictionary<string, string> customProperties)
+        {
+            Info(message.ToString());
+        }
+
         public void Error(string value)
         {
             System.Diagnostics.Trace.WriteLine(value);
+        }
+
+        public void Error(Exception exception)
+        {
+            Error(exception.Message);
+        }
+
+        public void Error(Exception exception, Dictionary<string, string> customProperties)
+        {
+            Error(exception.Message);
         }
     }
 }
