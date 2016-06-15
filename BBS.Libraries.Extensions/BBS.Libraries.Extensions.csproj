@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="EFExtensions\ToFullyLoaded.cs" />
     <Compile Include="EFExtensions\_EFExtensions.cs" />
+    <Compile Include="Enumerable\Enumerable.cs" />
     <Compile Include="Int\ToBool.cs" />
     <Compile Include="Int\ToDouble.cs" />
     <Compile Include="Object\FromJsonString.cs" />
