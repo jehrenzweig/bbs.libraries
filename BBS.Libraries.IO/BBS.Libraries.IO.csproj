@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.2.0, Culture=neutral, PublicKeyToken=9dea7c6e17aa31ff, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\ICSharpCode.SharpZipLib.Patched.0.86.2\lib\net20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>..\packages\ICSharpCode.SharpZipLib.Patched.0.86.2\lib\net20\ICSharpCode.SharpZipLib.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
