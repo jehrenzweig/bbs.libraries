@@ -23,6 +23,14 @@ namespace BBS.Libraries.ConsoleAppTests.Emails
 		{
 			public static readonly string _root = "~/BBS.Libraries.ConsoleAppTests.Emails/Views/";
 			[GeneratedCode("T4LocalContent", "1.0"), DebuggerNonUserCode]
+			public static partial class HandleBars
+			{
+				public static readonly string _root = "~/BBS.Libraries.ConsoleAppTests.Emails/Views/HandleBars/";
+				public static readonly string _01_Mhtml_cshtml = "~/BBS.Libraries.ConsoleAppTests.Emails/Views/HandleBars/01_Mhtml.cshtml";
+				public static readonly string _01_PlainText_cshtml = "~/BBS.Libraries.ConsoleAppTests.Emails/Views/HandleBars/01_PlainText.cshtml";
+				public static readonly string _01_Subject_cshtml = "~/BBS.Libraries.ConsoleAppTests.Emails/Views/HandleBars/01_Subject.cshtml";
+			}
+			[GeneratedCode("T4LocalContent", "1.0"), DebuggerNonUserCode]
 			public static partial class Razor
 			{
 				public static readonly string _root = "~/BBS.Libraries.ConsoleAppTests.Emails/Views/Razor/";

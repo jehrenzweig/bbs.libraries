@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConsoleAppTests", "ConsoleA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBS.Libraries.ConsoleAppTests.Emails", "BBS.Libraries.ConsoleAppTests.Emails\BBS.Libraries.ConsoleAppTests.Emails.csproj", "{CFFC6164-04EC-437C-BFD0-F65EB0B4312D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBS.Libraries.Templating.Handlebars", "BBS.Libraries.Templating.Handlebars\BBS.Libraries.Templating.Handlebars.csproj", "{0B4D28F4-6774-4F2F-B8AD-659F8933F67B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +87,10 @@ Global
 		{CFFC6164-04EC-437C-BFD0-F65EB0B4312D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFFC6164-04EC-437C-BFD0-F65EB0B4312D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFFC6164-04EC-437C-BFD0-F65EB0B4312D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B4D28F4-6774-4F2F-B8AD-659F8933F67B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B4D28F4-6774-4F2F-B8AD-659F8933F67B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B4D28F4-6774-4F2F-B8AD-659F8933F67B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B4D28F4-6774-4F2F-B8AD-659F8933F67B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

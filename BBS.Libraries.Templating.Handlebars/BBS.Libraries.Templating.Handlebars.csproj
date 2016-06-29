@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CFFC6164-04EC-437C-BFD0-F65EB0B4312D}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{0B4D28F4-6774-4F2F-B8AD-659F8933F67B}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BBS.Libraries.ConsoleAppTests.Emails</RootNamespace>
-    <AssemblyName>BBS.Libraries.ConsoleAppTests.Emails</AssemblyName>
+    <RootNamespace>BBS.Libraries.Templating.Handlebars</RootNamespace>
+    <AssemblyName>BBS.Libraries.Templating.Handlebars</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Handlebars, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22225d0bf33cd661, processorArchitecture=MSIL">
+      <HintPath>..\packages\Handlebars.Net.1.7.1\lib\Handlebars.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,26 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\HandleBars01.cs" />
-    <Compile Include="Models\Razor01.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="HandlebarsContentEmailGenerator.cs" />
+    <Compile Include="HandleBarsTemplatingService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="T4LocalContent\T4LocalContent1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>T4LocalContent.tt</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="T4LocalContent\T4LocalContent.settings.t4" />
-    <EmbeddedResource Include="Views\Razor\01_Mhtml.cshtml" />
-    <EmbeddedResource Include="Views\Razor\01_PlainText.cshtml" />
-    <EmbeddedResource Include="Views\Razor\01_Subject.cshtml" />
-    <EmbeddedResource Include="Views\HandleBars\01_Mhtml.cshtml" />
-    <EmbeddedResource Include="Views\HandleBars\01_PlainText.cshtml" />
-    <EmbeddedResource Include="Views\HandleBars\01_Subject.cshtml" />
-    <None Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BBS.Libraries.Contracts\BBS.Libraries.Contracts.csproj">
@@ -73,24 +57,17 @@
       <Project>{91a15f13-d1d0-4e55-8f52-8c1e2e744fd2}</Project>
       <Name>BBS.Libraries.Emails</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BBS.Libraries.Templating.Handlebars\BBS.Libraries.Templating.Handlebars.csproj">
-      <Project>{0b4d28f4-6774-4f2f-b8ad-659f8933f67b}</Project>
-      <Name>BBS.Libraries.Templating.Handlebars</Name>
+    <ProjectReference Include="..\BBS.Libraries.IO\BBS.Libraries.IO.csproj">
+      <Project>{3ff29989-f3b1-4c39-b5f2-24bad15601e7}</Project>
+      <Name>BBS.Libraries.IO</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BBS.Libraries.Templating.Razor\BBS.Libraries.Templating.Razor.csproj">
-      <Project>{cf81946b-7d5f-45cb-9aa2-e4d81fc7c750}</Project>
-      <Name>BBS.Libraries.Templating.Razor</Name>
+    <ProjectReference Include="..\BBS.Libraries.Templating\BBS.Libraries.Templating.csproj">
+      <Project>{eef2032f-f288-4c14-b163-10404b1b7c6d}</Project>
+      <Name>BBS.Libraries.Templating</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Readme.txt" />
-    <Content Include="T4LocalContent\T4LocalContent.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>T4LocalContent1.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

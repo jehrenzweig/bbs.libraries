@@ -1,13 +1,18 @@
-﻿using System.Net.Mail;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Mail;
 using System.Net.Mime;
+using System.Text;
+using System.Threading.Tasks;
 using BBS.Libraries.Emails;
 using MailMessage = BBS.Libraries.Emails.MailMessage;
 
-namespace BBS.Libraries.Templating.Razor
+namespace BBS.Libraries.Templating.Handlebars
 {
-    public class RazorContentEmailGenerator<T> : EmailGenerator<T> where T : class, IEmailBaseModel
+    public class HandlebarsContentEmailGenerator<T> : EmailGenerator<T> where T : class, IEmailBaseModel
     {
-        public RazorContentEmailGenerator(
+        public HandlebarsContentEmailGenerator(
             string namespaceViewName,
             string subjectViewFileName,
             string plainViewFileName,
@@ -18,9 +23,8 @@ namespace BBS.Libraries.Templating.Razor
             this.PlainViewFileName = plainViewFileName;
             this.MhtmlViewFileName = mhtmlViewFileName;
 
-            _templateService = new RazorTemplatingService<T>(namespaceViewName);
+            _templateService = new HandleBarsTemplatingService<T>(namespaceViewName);
         }
-        
         protected override MailMessage Generate(IEmailBaseModel emailModel)
         {
             var mhtmlViewAlternateView = AlternateView.CreateAlternateViewFromString(MhtmlView(emailModel), new ContentType("text/html"));
