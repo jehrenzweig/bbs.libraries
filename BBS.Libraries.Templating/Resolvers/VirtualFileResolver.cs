@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Web;
 using System.Web.Mvc;
-using RazorEngine.Templating;
 
-namespace BBS.Libraries.Emails
+namespace BBS.Libraries.Templating.Resolvers
 {
-    public abstract class MvcTemplateBase<T> : TemplateBase<T>
+    public class VirtualFileResolver : ITemplateResolver
     {
         #region Properties
 
         /// <summary>
-        /// Gets the <see cref="HtmlHelper{Object}"/> for this template.
+        /// Gets the <see cref="HtmlHelper"/> for this template.
         /// </summary>
         public HtmlHelper<object> Html { get; private set; }
 
@@ -28,16 +27,23 @@ namespace BBS.Libraries.Emails
             var httpContext = new HttpContextWrapper(HttpContext.Current);
             var handler = httpContext.CurrentHandler as MvcHandler;
             if (handler == null)
-            {
                 throw new InvalidOperationException("Unable to run template outside of ASP.NET MVC");
-            }
         }
 
         #endregion
 
-        public MvcTemplateBase()
+        public string NameSpace { get; private set; }
+
+        public VirtualFileResolver(string @namespace)
         {
-            this.InitHelpers();
+            this.NameSpace = @namespace;
+        }
+
+        public string Resolve(string fileName)
+        {
+            var ss = new BBS.Libraries.IO.Virtual.LocalVirtualFile(NameSpace, fileName);
+
+            return ss.ToString();
         }
     }
 }

@@ -1,0 +1,33 @@
+﻿<#+
+		readonly string RepositoryPathPrefix = "BBS.Libraries.ConsoleAppTests.Emails";
+
+		readonly string FilesNamespace = "BBS.Libraries.ConsoleAppTests.Emails";
+		readonly string FilesSubClassName = "T4Files";
+		readonly string LinksNamespace = "BBS.Libraries.ConsoleAppTests.Emails";
+		readonly string LinksSubClassName = "T4Links";
+
+		readonly string AreasRootFolder = "Areas";
+		readonly string ViewsFolder = "Views";
+
+		readonly string[] LocalContentFileFolders = new string[] {
+				"StyleSheets",
+				"JavaScripts",
+				"Scripts",
+				"Images",
+				"Content",
+				};
+
+		readonly string[] LocalContentFileIgnoreFileExtensions = new string[] {
+				".cs",
+				".vb",
+				};
+
+		static readonly Dictionary<System.Text.RegularExpressions.Regex, string> LocalContentFileNameReplacements = new Dictionary<System.Text.RegularExpressions.Regex, string>()
+				{
+						{ new System.Text.RegularExpressions.Regex(@"^(jquery-(?:\d+)\.(?:\d+)(?:\.(?:\d+))?\.js)$"), "jquery.js"},
+						{ new System.Text.RegularExpressions.Regex(@"^(jquery-(?:\d+)\.(?:\d+)(?:\.(?:\d+))?\.min\.js)$"), "jquery.min.js"},
+						{ new System.Text.RegularExpressions.Regex(@"^(jquery-ui-(?:\d+)\.(?:\d+)(?:\.(?:\d+))?\.js)$"), "jquery-ui.js"},
+						{ new System.Text.RegularExpressions.Regex(@"^(jquery-ui-(?:\d+)\.(?:\d+)(?:\.(?:\d+))?\.min\.js)$"), "jquery-ui.min.js"},
+						{ new System.Text.RegularExpressions.Regex(@"^(jquery-ui-(?:\d+)\.(?:\d+)(?:\.(?:\d+))?\.custom.css)$"), "jquery-ui.custom.css"}
+				};
+#>

@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CFFC6164-04EC-437C-BFD0-F65EB0B4312D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BBS.Libraries.ConsoleAppTests.Emails</RootNamespace>
+    <AssemblyName>BBS.Libraries.ConsoleAppTests.Emails</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\HandleBars01.cs" />
+    <Compile Include="Models\Razor01.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="T4LocalContent\T4LocalContent1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T4LocalContent.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="T4LocalContent\T4LocalContent.settings.t4" />
+    <EmbeddedResource Include="Views\Razor\01_Mhtml.cshtml" />
+    <EmbeddedResource Include="Views\Razor\01_PlainText.cshtml" />
+    <EmbeddedResource Include="Views\Razor\01_Subject.cshtml" />
+    <EmbeddedResource Include="Views\HandleBars\01_Mhtml.cshtml" />
+    <EmbeddedResource Include="Views\HandleBars\01_PlainText.cshtml" />
+    <EmbeddedResource Include="Views\HandleBars\01_Subject.cshtml" />
+    <None Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BBS.Libraries.Contracts\BBS.Libraries.Contracts.csproj">
+      <Project>{65ad0d4e-b8f9-463e-a92a-7021f367de0c}</Project>
+      <Name>BBS.Libraries.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BBS.Libraries.Emails\BBS.Libraries.Emails.csproj">
+      <Project>{91a15f13-d1d0-4e55-8f52-8c1e2e744fd2}</Project>
+      <Name>BBS.Libraries.Emails</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BBS.Libraries.Templating.Handlebars\BBS.Libraries.Templating.Handlebars.csproj">
+      <Project>{0b4d28f4-6774-4f2f-b8ad-659f8933f67b}</Project>
+      <Name>BBS.Libraries.Templating.Handlebars</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BBS.Libraries.Templating.Razor\BBS.Libraries.Templating.Razor.csproj">
+      <Project>{cf81946b-7d5f-45cb-9aa2-e4d81fc7c750}</Project>
+      <Name>BBS.Libraries.Templating.Razor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Readme.txt" />
+    <Content Include="T4LocalContent\T4LocalContent.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>T4LocalContent1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

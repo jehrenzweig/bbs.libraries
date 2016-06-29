@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBS.Libraries.SQL", "BBS.Li
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBS.Libraries.Emails", "BBS.Libraries.Emails\BBS.Libraries.Emails.csproj", "{91A15F13-D1D0-4E55-8F52-8C1E2E744FD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBS.Libraries.Razor", "BBS.Libraries.Razor\BBS.Libraries.Razor.csproj", "{CF81946B-7D5F-45CB-9AA2-E4D81FC7C750}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBS.Libraries.Templating.Razor", "BBS.Libraries.Templating.Razor\BBS.Libraries.Templating.Razor.csproj", "{CF81946B-7D5F-45CB-9AA2-E4D81FC7C750}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBS.Libraries.Contracts", "BBS.Libraries.Contracts\BBS.Libraries.Contracts.csproj", "{65AD0D4E-B8F9-463E-A92A-7021F367DE0C}"
 EndProject
@@ -24,6 +24,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBS.Libraries.Logging", "BBS.Libraries.Logging\BBS.Libraries.Logging.csproj", "{1BB4C10F-A595-4102-B6C5-153C7ACE31B8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBS.Libraries.Logging.AppInsights", "BBS.Libraries.Logging.AppInsights\BBS.Libraries.Logging.AppInsights.csproj", "{C270639C-5821-4301-BAE6-D09AB7BEEF67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBS.Libraries.Templating", "BBS.Libraries.Templating\BBS.Libraries.Templating.csproj", "{EEF2032F-F288-4C14-B163-10404B1B7C6D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConsoleAppTests", "ConsoleAppTests", "{C5D8C916-BE22-4C0D-BC05-04D95A169E65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBS.Libraries.ConsoleAppTests.Emails", "BBS.Libraries.ConsoleAppTests.Emails\BBS.Libraries.ConsoleAppTests.Emails.csproj", "{CFFC6164-04EC-437C-BFD0-F65EB0B4312D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBS.Libraries.Templating.Handlebars", "BBS.Libraries.Templating.Handlebars\BBS.Libraries.Templating.Handlebars.csproj", "{0B4D28F4-6774-4F2F-B8AD-659F8933F67B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,11 +79,24 @@ Global
 		{C270639C-5821-4301-BAE6-D09AB7BEEF67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C270639C-5821-4301-BAE6-D09AB7BEEF67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C270639C-5821-4301-BAE6-D09AB7BEEF67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEF2032F-F288-4C14-B163-10404B1B7C6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEF2032F-F288-4C14-B163-10404B1B7C6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEF2032F-F288-4C14-B163-10404B1B7C6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEF2032F-F288-4C14-B163-10404B1B7C6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFFC6164-04EC-437C-BFD0-F65EB0B4312D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFFC6164-04EC-437C-BFD0-F65EB0B4312D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFFC6164-04EC-437C-BFD0-F65EB0B4312D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFFC6164-04EC-437C-BFD0-F65EB0B4312D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B4D28F4-6774-4F2F-B8AD-659F8933F67B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B4D28F4-6774-4F2F-B8AD-659F8933F67B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B4D28F4-6774-4F2F-B8AD-659F8933F67B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B4D28F4-6774-4F2F-B8AD-659F8933F67B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{923A0B55-C4C3-4429-8070-63BA3EF5974D} = {8BC8F139-BBEC-432B-82CC-CE42039E8362}
+		{CFFC6164-04EC-437C-BFD0-F65EB0B4312D} = {C5D8C916-BE22-4C0D-BC05-04D95A169E65}
 	EndGlobalSection
 EndGlobal

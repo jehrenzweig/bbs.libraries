@@ -7,19 +7,23 @@ using System.Threading.Tasks;
 
 namespace BBS.Libraries.Emails
 {
-  public class EmailAddressCollection : List<EmailAddress>
-  {
-    public EmailAddressCollection()
+    public class EmailAddressCollection : List<EmailAddress>
     {
-      
-    }
+        public EmailAddressCollection()
+        {
 
-    public EmailAddressCollection(IEnumerable<string> emailAddresses)
-    {
-      foreach (var emailAddress in emailAddresses)
-      {
-        this.Add(new EmailAddress(emailAddress));
-      }
+        }
+
+        public EmailAddressCollection(string emailAddress) : this(new string[] { emailAddress })
+        {
+        }
+
+        public EmailAddressCollection(IEnumerable<string> emailAddresses)
+        {
+            foreach (var emailAddress in emailAddresses)
+            {
+                this.Add(new EmailAddress(emailAddress));
+            }
+        }
     }
-  }
 }

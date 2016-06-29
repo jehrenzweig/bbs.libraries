@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
-using BBS.Libraries.Emails;
+﻿using System.Net.Mail;
+using BBS.Libraries.Contracts;
 
-namespace BBS.Libraries.Contracts
+namespace BBS.Libraries.Emails
 {
     public interface IEmailBaseModel : IRazorContentModel
     {
