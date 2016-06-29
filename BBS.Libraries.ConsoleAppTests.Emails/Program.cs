@@ -72,6 +72,27 @@ namespace BBS.Libraries.ConsoleAppTests.Emails
                 );
 
             handleBarsEngine.GenerateAndSend(handleBarsModel);
+
+            // Batch size of Handlebars ;)
+
+            var models = GenerateTester.GetEmailModels().ToList();
+            handleBarsEngine.GenerateAndSend(models, 5);
+        }
+    }
+
+    class GenerateTester
+    {
+        public static IEnumerable<IEmailBaseModel> GetEmailModels()
+        {
+            for (int i = 0; i < 13; i++)
+            {
+                yield return new Models.HandleBars01()
+                {
+                    ToEmailAddressCollection = new BBS.Libraries.Emails.EmailAddressCollection("brenton@helpfulcowz.com"),
+                    FromEmailAddress = new EmailAddress("someone@somewhere.net"),
+                    FirstName = "Brenton"
+                };
+            }
         }
     }
 }

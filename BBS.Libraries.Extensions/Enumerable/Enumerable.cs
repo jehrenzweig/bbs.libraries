@@ -32,7 +32,6 @@ namespace BBS.Libraries.Extensions
 {
     public static class Enumerable
     {
-        // Untested, should be fine.
         public static void RunInBatches<TType>(this IEnumerable<TType> listOfStuffToRunInBatches, int batchSize, Action<IEnumerable<TType>> actionToRun)
         {
             var batches = listOfStuffToRunInBatches.Batch(batchSize);
@@ -42,9 +41,9 @@ namespace BBS.Libraries.Extensions
             }
         }
 
-        public static List<List<TTypeToBatch>> Batch<TTypeToBatch>(this IEnumerable<TTypeToBatch> thingsToBatch, int batchSize)
+        public static IEnumerable<IEnumerable<TTypeToBatch>> Batch<TTypeToBatch>(this IEnumerable<TTypeToBatch> thingsToBatch, int batchSize)
         {
-            var result = new List<List<TTypeToBatch>>();
+            var result = new List<List<TTypeToBatch>>() ;
 
             var batch = new List<TTypeToBatch>();
 
@@ -52,10 +51,11 @@ namespace BBS.Libraries.Extensions
             {
                 batch.Add(item);
 
-                if (batch.Count == batchSize)
+                if (batch.Count >= batchSize)
                 {
                     result.Add(batch);
-                    batch.Clear();
+
+                    batch = new List<TTypeToBatch>();
                 }
             }
 
@@ -65,7 +65,6 @@ namespace BBS.Libraries.Extensions
             }
 
             return result;
-            ;
         }
     }
 }

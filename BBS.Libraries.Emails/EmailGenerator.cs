@@ -30,6 +30,7 @@ using System.Net.Mime;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using BBS.Libraries.Extensions;
 
 namespace BBS.Libraries.Emails
 {
@@ -104,6 +105,17 @@ namespace BBS.Libraries.Emails
                 Attachments = emailModel.Attachments ?? new MailMessageAttachmentCollection(),
                 Priority = emailModel.Priority
             };
+        }
+
+        public void GenerateAndSend<T>(IEnumerable<T> emailModel, int batchSize) where T : IEmailBaseModel
+        {
+            emailModel.RunInBatches(batchSize, emailModelBatch =>
+            {
+                foreach (var model in emailModelBatch)
+                {
+                    GenerateAndSend(model);
+                }
+            });
         }
 
         public void GenerateAndSend<T>(T emailModel) where T : IEmailBaseModel
