@@ -49,22 +49,5 @@ namespace BBS.Libraries.Templating.Handlebars
 
             _templateService = new HandleBarsTemplatingService<T>(namespaceViewName);
         }
-        protected override MailMessage Generate(IEmailBaseModel emailModel)
-        {
-            var mhtmlViewAlternateView = AlternateView.CreateAlternateViewFromString(MhtmlView(emailModel), new ContentType("text/html"));
-            var plainViewAlternateView = AlternateView.CreateAlternateViewFromString(PlainView(emailModel));
-
-            return new MailMessage()
-            {
-                Subject = this.SubjectView(emailModel),
-                AlternateViews = new MailMessageAlternateViewCollection() { plainViewAlternateView, mhtmlViewAlternateView },
-                To = emailModel.ToEmailAddressCollection,
-                From = emailModel.FromEmailAddress,
-                CC = emailModel.CcEmailAddressCollection ?? new EmailAddressCollection(),
-                Bcc = emailModel.BccEmailAddressCollection ?? new EmailAddressCollection(),
-                Attachments = emailModel.Attachments ?? new MailMessageAttachmentCollection(),
-                Priority = emailModel.Priority
-            };
-        }
     }
 }
