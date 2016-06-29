@@ -69,12 +69,13 @@
       <Project>{91a15f13-d1d0-4e55-8f52-8c1e2e744fd2}</Project>
       <Name>BBS.Libraries.Emails</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BBS.Libraries.Razor\BBS.Libraries.Razor.csproj">
+    <ProjectReference Include="..\BBS.Libraries.Templating.Razor\BBS.Libraries.Templating.Razor.csproj">
       <Project>{cf81946b-7d5f-45cb-9aa2-e4d81fc7c750}</Project>
-      <Name>BBS.Libraries.Razor</Name>
+      <Name>BBS.Libraries.Templating.Razor</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Readme.txt" />
     <Content Include="T4LocalContent\T4LocalContent.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4LocalContent1.cs</LastGenOutput>

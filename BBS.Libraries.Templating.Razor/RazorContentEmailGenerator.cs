@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mail;
+﻿using System.Net.Mail;
 using System.Net.Mime;
-using System.Text;
-using System.Threading.Tasks;
 using BBS.Libraries.Emails;
 using MailMessage = BBS.Libraries.Emails.MailMessage;
 
-namespace BBS.Razor
+namespace BBS.Libraries.Templating.Razor
 {
     public class RazorContentEmailGenerator<T> : EmailGenerator<T> where T : class, IEmailBaseModel
     {

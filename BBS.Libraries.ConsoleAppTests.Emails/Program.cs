@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BBS.Libraries.Emails;
+using BBS.Libraries.Templating.Razor;
 
 namespace BBS.Libraries.ConsoleAppTests.Emails
 {
@@ -20,7 +21,7 @@ namespace BBS.Libraries.ConsoleAppTests.Emails
                 FirstName = "Brenton"
             };
 
-            var razorEngine = new BBS.Razor.RazorContentEmailGenerator<Models.Razor01>(
+            var razorEngine = new RazorContentEmailGenerator<Models.Razor01>(
                 BBS.Libraries.ConsoleAppTests.Emails.T4Files.RepositryNamespace,
                 BBS.Libraries.ConsoleAppTests.Emails.T4Files.Views.Razor._01_Subject_cshtml,
                 BBS.Libraries.ConsoleAppTests.Emails.T4Files.Views.Razor._01_PlainText_cshtml,
