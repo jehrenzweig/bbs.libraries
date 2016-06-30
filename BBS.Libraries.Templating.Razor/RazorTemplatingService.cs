@@ -43,7 +43,7 @@ namespace BBS.Libraries.Templating.Razor
 
         public string Parse<T>(string templateToParse, T model)
         {
-            var configuration = new TemplateServiceConfiguration()
+            var configuration = new TemplateServiceConfiguration
             {
                 CachingProvider = new DefaultCachingProvider(),
                 // TODO: Add in config for turning debug on / off

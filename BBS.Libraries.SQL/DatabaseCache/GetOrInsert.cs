@@ -41,7 +41,7 @@ namespace BBS.Libraries.SQL
                 return Items[cacheId].Item;
             }
 
-            Items.Add(cacheId, new DatabaseCacheItem<T>()
+            Items.Add(cacheId, new DatabaseCacheItem<T>
             {
                 InsertedIntoCacheDateTime = DateTime.UtcNow,
                 Item = queryToRun.Invoke()

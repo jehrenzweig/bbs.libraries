@@ -30,7 +30,7 @@ namespace BBS.Libraries.Extensions
     {
         public static string ToJsonString<T>(this object o) where T : class, new()
         {
-            var settings = new Newtonsoft.Json.JsonSerializerSettings() {TypeNameHandling = TypeNameHandling.Auto };
+            var settings = new Newtonsoft.Json.JsonSerializerSettings {TypeNameHandling = TypeNameHandling.Auto };
 
             return JsonConvert.SerializeObject(o, settings);
         }

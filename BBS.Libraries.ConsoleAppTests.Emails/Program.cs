@@ -36,7 +36,7 @@ namespace BBS.Libraries.ConsoleAppTests.Emails
         {
             // Generate and send an email
 
-            var razorModel = new Models.Razor01()
+            var razorModel = new Models.Razor01
             {
                 ToEmailAddressCollection = new BBS.Libraries.Emails.EmailAddressCollection("brenton@helpfulcowz.com"),
                 FromEmailAddress = new EmailAddress("someone@somewhere.net"),
@@ -54,7 +54,7 @@ namespace BBS.Libraries.ConsoleAppTests.Emails
 
             // HandleBars
 
-            var handleBarsModel = new Models.HandleBars01()
+            var handleBarsModel = new Models.HandleBars01
             {
                 ToEmailAddressCollection = new BBS.Libraries.Emails.EmailAddressCollection("brenton@helpfulcowz.com"),
                 FromEmailAddress = new EmailAddress("someone@somewhere.net"),
@@ -83,7 +83,7 @@ namespace BBS.Libraries.ConsoleAppTests.Emails
         {
             for (int i = 0; i < 13; i++)
             {
-                yield return new Models.HandleBars01()
+                yield return new Models.HandleBars01
                 {
                     ToEmailAddressCollection = new BBS.Libraries.Emails.EmailAddressCollection("brenton@helpfulcowz.com"),
                     FromEmailAddress = new EmailAddress("someone@somewhere.net"),

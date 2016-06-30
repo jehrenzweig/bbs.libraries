@@ -89,10 +89,10 @@ namespace BBS.Libraries.Emails
             var mhtmlViewAlternateView = AlternateView.CreateAlternateViewFromString(MhtmlView(emailModel), new ContentType("text/html"));
             var plainViewAlternateView = AlternateView.CreateAlternateViewFromString(PlainView(emailModel));
 
-            return new MailMessage()
+            return new MailMessage
             {
                 Subject = this.SubjectView(emailModel),
-                AlternateViews = new MailMessageAlternateViewCollection() { plainViewAlternateView, mhtmlViewAlternateView },
+                AlternateViews = new MailMessageAlternateViewCollection { plainViewAlternateView, mhtmlViewAlternateView },
                 To = emailModel.ToEmailAddressCollection,
                 From = emailModel.FromEmailAddress,
                 CC = emailModel.CcEmailAddressCollection ?? new EmailAddressCollection(),

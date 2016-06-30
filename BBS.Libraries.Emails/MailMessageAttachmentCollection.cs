@@ -31,12 +31,12 @@ namespace BBS.Libraries.Emails
   {
     public void Add(System.IO.Stream stream, string fileName, string mediaType)
     {
-      base.Add(new MailMessageAttachment() { Content = stream.ToByteArray(), ContentType = mediaType, Name = fileName });
+      base.Add(new MailMessageAttachment { Content = stream.ToByteArray(), ContentType = mediaType, Name = fileName });
     }
 
     public void Add(System.Net.Mail.Attachment attachment)
     {
-      base.Add(new MailMessageAttachment(){Content = attachment.ContentStream.ToByteArray(), ContentType = attachment.ContentType.MediaType, Name = attachment.Name});
+      base.Add(new MailMessageAttachment {Content = attachment.ContentStream.ToByteArray(), ContentType = attachment.ContentType.MediaType, Name = attachment.Name});
     }
   }
 }
