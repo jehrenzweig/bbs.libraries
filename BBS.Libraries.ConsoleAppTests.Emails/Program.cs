@@ -30,25 +30,27 @@ using BBS.Libraries.Templating.Razor;
 
 namespace BBS.Libraries.ConsoleAppTests.Emails
 {
+    /// <summary>
+    /// Email data to be used across all test cases
+    /// </summary>
+    static class TestData
+    {
+        public static IEnumerable<string> ToEmailAddresses = new[] { "brenton@helpfulcowz.com" };
+        public static IEnumerable<string> FromEmailAddresses = new[] { "someone@somewhere.net" };
+        public static string FirstName = "Brenton";
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-            // Compose email data to be used across all tests.
-            var emailTestData = new
-            {
-                ToEmailAddresses = new[] { "brenton@helpfulcowz.com" },
-                FromEmailAddresses = new[] { "someone@somewhere.net" },
-                FirstName = "Brenton"
-            };
-
             // Generate and send an email
 
             var razorModel = new Models.Razor01
             {
-                ToEmailAddressCollection = new BBS.Libraries.Emails.EmailAddressCollection(emailTestData.ToEmailAddresses.First()),
-                FromEmailAddress = new EmailAddress(emailTestData.FromEmailAddresses.First()),
-                FirstName = emailTestData.FirstName
+                ToEmailAddressCollection = new BBS.Libraries.Emails.EmailAddressCollection(TestData.ToEmailAddresses.First()),
+                FromEmailAddress = new EmailAddress(TestData.FromEmailAddresses.First()),
+                FirstName = TestData.FirstName
             };
 
             var razorEngine = new RazorContentEmailGenerator<Models.Razor01>(
@@ -64,9 +66,9 @@ namespace BBS.Libraries.ConsoleAppTests.Emails
 
             var handleBarsModel = new Models.HandleBars01
             {
-                ToEmailAddressCollection = new BBS.Libraries.Emails.EmailAddressCollection(emailTestData.ToEmailAddresses.First()),
-                FromEmailAddress = new EmailAddress(emailTestData.FromEmailAddresses.First()),
-                FirstName = emailTestData.FirstName
+                ToEmailAddressCollection = new BBS.Libraries.Emails.EmailAddressCollection(TestData.ToEmailAddresses.First()),
+                FromEmailAddress = new EmailAddress(TestData.FromEmailAddresses.First()),
+                FirstName = TestData.FirstName
             };
 
             var handleBarsEngine = new HandlebarsContentEmailGenerator<Models.HandleBars01>(
