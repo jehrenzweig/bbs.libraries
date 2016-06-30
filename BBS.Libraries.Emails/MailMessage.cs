@@ -22,13 +22,8 @@
 //    SOFTWARE.
 //-----------------------------------------------------------------------
 
-using System;
 using System.Collections.Specialized;
 using System.Net.Mail;
-using System.Runtime.Serialization;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BBS.Libraries.Emails
 {

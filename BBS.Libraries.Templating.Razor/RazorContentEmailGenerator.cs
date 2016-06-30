@@ -22,10 +22,7 @@
 //    SOFTWARE.
 //-----------------------------------------------------------------------
 
-using System.Net.Mail;
-using System.Net.Mime;
 using BBS.Libraries.Emails;
-using MailMessage = BBS.Libraries.Emails.MailMessage;
 
 namespace BBS.Libraries.Templating.Razor
 {

@@ -22,12 +22,7 @@
 //    SOFTWARE.
 //-----------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace BBS.Libraries.Emails
 {

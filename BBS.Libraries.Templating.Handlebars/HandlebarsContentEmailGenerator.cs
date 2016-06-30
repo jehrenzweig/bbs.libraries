@@ -22,14 +22,7 @@
 //    SOFTWARE.
 //-----------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using System.Net.Mail;
-using System.Net.Mime;
-using System.Text;
-using System.Threading.Tasks;
 using BBS.Libraries.Emails;
-using MailMessage = BBS.Libraries.Emails.MailMessage;
 
 namespace BBS.Libraries.Templating.Handlebars
 {

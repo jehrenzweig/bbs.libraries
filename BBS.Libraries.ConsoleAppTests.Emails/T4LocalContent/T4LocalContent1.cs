@@ -2,15 +2,8 @@
 // Make sure the compiler doesn't complain about missing Xml comments
 #pragma warning disable 1591
 
-using System;
 using System.Diagnostics;
 using System.CodeDom.Compiler;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-
-
-
 
 #region BBS.Libraries.ConsoleAppTests.Emails.T4Files
 namespace BBS.Libraries.ConsoleAppTests.Emails

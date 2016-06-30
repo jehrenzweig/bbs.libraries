@@ -22,10 +22,7 @@
 //    SOFTWARE.
 //-----------------------------------------------------------------------
 
-using System;
 using System.Collections.Generic;
-using System.Net.Mail;
-using System.Runtime.Serialization;
 using BBS.Libraries.Extensions;
 
 namespace BBS.Libraries.Emails

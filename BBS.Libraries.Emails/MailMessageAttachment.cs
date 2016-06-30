@@ -22,13 +22,8 @@
 //    SOFTWARE.
 //-----------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Net.Mail;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BBS.Libraries.Emails
 {
