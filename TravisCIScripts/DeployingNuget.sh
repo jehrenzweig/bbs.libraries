@@ -5,7 +5,7 @@ declare file_content=$( cat $AssemblyFilePath)
 
 if [[ " $file_content " =~ $regex ]] # please note the space before and after the file content
 	then
-		sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" $ProjectName.nuspec
+		sed -i "s|\(<version>\)[^<>]*\(</version>\)|\1${BASH_REMATCH[1]}\2|g" $ProjectName.csproj.nuspec
 	else
 		echo "Have not updated version of NuGet Package"
 		exit 1
