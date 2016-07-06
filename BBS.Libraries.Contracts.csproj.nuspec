@@ -14,4 +14,7 @@
       <group targetFramework="net45" />
     </dependencies> 
   </metadata>
+  <files>
+      <file src="BBS.Libraries.Contracts\bin\**\*.dll" target="lib\net45" />
+  </files>
 </package>
