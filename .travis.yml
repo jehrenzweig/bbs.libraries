@@ -14,7 +14,7 @@ script:
   - ./TravisCIScripts/IncrementVersion.sh
 
   # Building Project
-  - xbuild /p:Configuration=Release $ProjectName.csproj /p:TargetFrameworkVersion="v4.5" 
+  - xbuild /p:Configuration=Release ./BBS.Libraries.Contracts/$ProjectName.csproj /p:TargetFrameworkVersion="v4.5" 
 
 after_success:
   # Deploying Nuget
