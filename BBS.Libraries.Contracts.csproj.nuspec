@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>BBS.Libraries.Contracts</id>
+    <version>16.7.0</version>
+    <authors>Betabyte Software</authors>
+    <owners>Betabte Software</owners>
+    <projectUrl>https://github.com/brentonlamar/bbs.libraries</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Emails, Serialized, and templating</description>
+    <releaseNotes>Initial release from github library</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <dependencies> 
+      <group targetFramework="net45" />
+    </dependencies> 
+  </metadata>
+  <files>
+      <file src="\bin\$configuration$\BBS.Libraries.Contracts.dll" target="lib\net45" />
+  </files>
+</package>
