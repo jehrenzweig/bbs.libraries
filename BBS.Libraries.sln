@@ -33,6 +33,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBS.Libraries.ConsoleAppTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBS.Libraries.Templating.Handlebars", "BBS.Libraries.Templating.Handlebars\BBS.Libraries.Templating.Handlebars.csproj", "{0B4D28F4-6774-4F2F-B8AD-659F8933F67B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TravisCIScripts", "TravisCIScripts", "{46C10AFB-8C54-4B9F-AA43-4BC0E81044F5}"
+	ProjectSection(SolutionItems) = preProject
+		TravisCIScripts\DeployingNuget.sh = TravisCIScripts\DeployingNuget.sh
+		TravisCIScripts\IncrementVersion.sh = TravisCIScripts\IncrementVersion.sh
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

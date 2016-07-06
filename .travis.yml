@@ -10,13 +10,13 @@ install:
 
 script:
   # Refreshing Version
-  - chmod +x ./Scripts/IncrementVersion.sh
-  - ./Scripts/IncrementVersion.sh
+  - chmod +x ./TravisCIScripts/IncrementVersion.sh
+  - ./TravisCIScripts/IncrementVersion.sh
 
   # Building Project
   - xbuild /p:Configuration=Release $ProjectName.csproj /p:TargetFrameworkVersion="v4.5" 
 
 after_success:
   # Deploying Nuget
-  - chmod +x ./Scripts/DeployingNuget.sh
-  - ./Scripts/DeployingNuget.sh
+  - chmod +x ./TravisCIScripts/DeployingNuget.sh
+  - ./TravisCIScripts/DeployingNuget.sh
