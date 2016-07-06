@@ -15,6 +15,6 @@
     </dependencies> 
   </metadata>
   <files>
-      <file src="\bin\Debug\BBS.Libraries.Contracts.dll" target="lib\net45" />
+      <file src="\BBS.Libraries.Contracts\bin\Debug\BBS.Libraries.Contracts.dll" target="lib\net45" />
   </files>
 </package>
