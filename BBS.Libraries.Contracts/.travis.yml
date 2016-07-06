@@ -1,6 +1,11 @@
 language: csharp
 solution: $ProjectName.csproj
 
+branches:
+  only:
+    - master
+    - TravisCI
+
 install:
   - nuget restore -source "$Private_Nuget_Server_Repo_URL;https://www.nuget.org/api/v2" -Verbosity quiet
 
