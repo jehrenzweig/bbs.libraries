@@ -11,7 +11,7 @@ if [[ " $file_content " =~ $regex ]] # please note the space before and after th
 		exit 1
 fi
 
-nuget pack $ProjectName.csproj.nuspec
+nuget pack ./BBS.Libraries.Contracts/$ProjectName.csproj.nuspec
 
 if [[ ${IsUploadingNugetToPrivateServer,,} == "true" ]]; then 
 		echo "Deploying to private hosting server" 
